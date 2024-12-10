@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sessões</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">CINEXYZ</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="filmes.html">Filmes</a>
+      <a href="carrinho.html">Carrinho</a>
+      <button class="btn-cadastrar">Cadastrar</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="sessoes">
+      <h2>SESSÕES</h2>
+      <form class="pesquisa">
+        <input type="date" name="data">
+        <input type="text" name="horario" placeholder="Horário">
+        <input type="text" name="sala" placeholder="Sala">
+        <button class="btn-pesquisar">Pesquisar</button>
+      </form>
+
+      <div class="sessoes-lista">
+        <!-- Estrutura das sessões -->
+        <div class="sessao-item">
+          <h3>Título do Filme</h3>
+          <p>Horário: XX:XX</p>
+          <p>Sala: X</p>
+          <button class="btn-comprar">Comprar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
