@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sessões</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo">CINEXYZ</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="filmes.html">Filmes</a>
+      <a href="sessoes.html">Sessões</a>
+      <div id="admin-options" style="display: none;">
+        <a href="cadastro.html">Cadastrar</a>
+      </div>
+      <button onclick="location.href='login.html'" class="btn-login" id="login-btn">Login</button>
+    </nav>
+  </header>
+  
+
+  <!-- Conteúdo Principal -->
+  <main class="sessoes-container">
+    <section class="pesquisa-sessoes">
+      <h1>SESSÕES</h1>
+      <form class="form-sessoes">
+        <input type="date" class="input" name="data" placeholder="Data">
+        <input type="time" class="input" name="hora" placeholder="Horário">
+        <input type="text" class="input" name="sala" placeholder="Sala">
+        <button class="btn-pesquisar">Pesquisar</button>
+      </form>
+    </section>
+
+    <section class="resultados-sessoes">
+      <h2>Próximas Sessões:</h2>
+      <div class="sessao-card">
+        <img src="https://via.placeholder.com/100x150" alt="Poster do Filme" class="sessao-poster">
+        <div class="sessao-info">
+          <h3>Título do Filme</h3>
+          <p>Data: 10/12/2024</p>
+          <p>Horário: 19:00</p>
+          <p>Sala: 1</p>
+          <button class="btn-comprar">Comprar</button>
+        </div>
+      </div>
+      <div class="sessao-card">
+        <img src="https://via.placeholder.com/100x150" alt="Poster do Filme" class="sessao-poster">
+        <div class="sessao-info">
+          <h3>Título do Filme</h3>
+          <p>Data: 10/12/2024</p>
+          <p>Horário: 21:00</p>
+          <p>Sala: 2</p>
+          <button class="btn-comprar">Comprar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
