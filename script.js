@@ -74,3 +74,39 @@ function verificarLogin() {
 window.onload = function() {
   verificarLogin();
 };
+// Função para verificar se o usuário logado é um administrador
+function verificarAdmin() {
+  const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+  if (usuarioLogado && usuarioLogado.isAdmin) {
+    // Se o usuário logado for admin, redireciona para o cadastro
+    window.location.href = "cadastro.html";
+  }
+}
+
+// Função para verificar o login ao carregar a página
+window.onload = function() {
+  verificarLogin();
+
+  // Verificar se o usuário está acessando a página de perfil do admin
+  if (window.location.pathname.includes("perfil.html")) {
+    verificarAdmin();
+  }
+};
+
+// Função de verificar login e exibir os elementos corretos (login/logout)
+function verificarLogin() {
+  const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+  if (usuarioLogado) {
+    // Exibir nome do usuário logado e permitir logout
+    document.getElementById("btn-logout").style.display = "inline-block"; // Exibir o botão de logout
+    document.getElementById("icon-user").style.display = "inline-block"; // Exibir o ícone de usuário
+    document.getElementById("btn-login").style.display = "none"; // Ocultar o botão de login
+  } else {
+    // Ocultar o botão de logout e o ícone de usuário
+    document.getElementById("btn-login").style.display = "inline-block";
+    document.getElementById("btn-logout").style.display = "none";
+    document.getElementById("icon-user").style.display = "none";
+  }
+}
