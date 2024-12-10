@@ -110,3 +110,48 @@ function verificarLogin() {
     document.getElementById("icon-user").style.display = "none";
   }
 }
+
+document.getElementById('form-cadastro').addEventListener('submit', function(event) {
+  event.preventDefault(); // Impede o envio do formulário
+
+  // Coleta os dados do formulário
+  const nome = document.getElementById('nome').value;
+  const capacidade = document.getElementById('capacidade').value;
+  const filme = document.getElementById('filme').value;
+  const genero = document.getElementById('genero').value;
+  const duracao = document.getElementById('duracao').value;
+  const data = document.getElementById('data').value;
+  const horario = document.getElementById('horario').value;
+  const ingresso = document.getElementById('ingresso').value;
+  const preco = document.getElementById('preco').value;
+  const imagem = document.getElementById('imagem').files[0] ? document.getElementById('imagem').files[0].name : ''; // Captura o nome da imagem
+
+  // Cria um objeto com os dados do formulário
+  const sessao = {
+    nome,
+    capacidade,
+    filme,
+    genero,
+    duracao,
+    data,
+    horario,
+    ingresso,
+    preco,
+    imagem
+  };
+
+  // Recupera as sessões existentes do LocalStorage ou cria um array vazio
+  let sessoes = JSON.parse(localStorage.getItem('sessoes')) || [];
+
+  // Adiciona a nova sessão ao array
+  sessoes.push(sessao);
+
+  // Salva as sessões no LocalStorage
+  localStorage.setItem('sessoes', JSON.stringify(sessoes));
+
+  // Exibe uma mensagem de confirmação
+  alert('Sessão cadastrada com sucesso!');
+
+  // Limpa o formulário após o envio
+  document.getElementById('form-cadastro').reset();
+});

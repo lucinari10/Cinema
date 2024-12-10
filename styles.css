@@ -555,3 +555,49 @@
     text-align: center;
     margin-top: 20px;
   }
+  
+  .mensagem-confirmacao {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 9999;
+  }
+  
+  .mensagem-confirmacao p {
+    margin: 0;
+  }
+  
+  .sessao-lista {
+    padding: 20px;
+  }
+  
+  .sessao-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .sessao-card {
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  .sessao-card h3 {
+    margin-top: 0;
+  }
+  
+  .sessao-card p {
+    margin: 5px 0;
+  }
+  
+  .sessao-card strong {
+    color: #333;
+  }

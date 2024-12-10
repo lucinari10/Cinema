@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CineXYZ</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
 </head>
-<body onload="verificarLogin()">
+<body>
   <header class="header">
     <div class="logo">CINEXYZ</div>
     <nav class="nav">
@@ -28,35 +27,11 @@
       <p>Coming Soon</p>
     </section>
 
-    <section class="filmes">
-      <h2>FILMES</h2>
-      <div class="filmes-container">
-        <div class="filme-card">
-          <div class="imagem"></div>
-          <h3>TÍTULO</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula.</p>
-          <button class="btn-detalhes">Detalhes</button>
-        </div>
-        <div class="filme-card">
-          <div class="imagem"></div>
-          <h3>TÍTULO</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula.</p>
-          <button class="btn-detalhes">Detalhes</button>
-        </div>
-        <div class="filme-card">
-          <div class="imagem"></div>
-          <h3>TÍTULO</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula.</p>
-          <button class="btn-detalhes">Detalhes</button>
-        </div>
-        <div class="filme-card">
-          <div class="imagem"></div>
-          <h3>TÍTULO</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula.</p>
-          <button class="btn-detalhes">Detalhes</button>
-        </div>
+    <section class="sessao-lista">
+      <h2>Sessões Cadastradas</h2>
+      <div id="sessao-container" class="sessao-container">
+        <!-- As sessões cadastradas serão exibidas aqui -->
       </div>
-      <button class="btn-ver-mais">Ver Mais</button>
     </section>
   </main>
 
@@ -69,5 +44,40 @@
       <a href="#">Contato</a>
     </nav>
   </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Função para exibir as sessões cadastradas na Home
+    function exibirSessoes() {
+      const sessoes = JSON.parse(localStorage.getItem('sessoes')) || [];
+
+      const sessaoContainer = document.getElementById('sessao-container');
+      if (sessoes.length === 0) {
+        sessaoContainer.innerHTML = "<p>Nenhuma sessão cadastrada.</p>";
+        return;
+      }
+
+      sessoes.forEach(sessao => {
+        const sessaoCard = document.createElement('div');
+        sessaoCard.classList.add('sessao-card');
+
+        sessaoCard.innerHTML = `
+          <h3>Filme: ${sessao.filme}</h3>
+          <p><strong>Nome da Sala:</strong> ${sessao.nome}</p>
+          <p><strong>Capacidade:</strong> ${sessao.capacidade}</p>
+          <p><strong>Gênero:</strong> ${sessao.genero}</p>
+          <p><strong>Duração:</strong> ${sessao.duracao}</p>
+          <p><strong>Data:</strong> ${sessao.data}</p>
+          <p><strong>Horário:</strong> ${sessao.horario}</p>
+          <p><strong>Tipo de Ingresso:</strong> ${sessao.ingresso}</p>
+          <p><strong>Preço:</strong> R$ ${sessao.preco}</p>
+          <p><strong>Imagem do Filme:</strong> ${sessao.imagem ? sessao.imagem : 'Nenhuma imagem fornecida.'}</p>
+        `;
+        sessaoContainer.appendChild(sessaoCard);
+      });
+    }
+
+    window.onload = exibirSessoes;
+  </script>
 </body>
 </html>
