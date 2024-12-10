@@ -7,32 +7,52 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Cabeçalho -->
   <header class="header">
     <div class="logo">CINEXYZ</div>
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="filmes.html">Filmes</a>
-      <a href="carrinho.html">Carrinho</a>
-      <button class="btn-cadastrar">Cadastrar</button>
+      <a href="sessoes.html">Sessões</a>
+      <div id="admin-options" style="display: none;">
+        <a href="cadastro.html">Cadastrar</a>
+      </div>
+      <button onclick="location.href='login.html'" class="btn-login" id="login-btn">Login</button>
     </nav>
   </header>
+  
 
-  <main>
-    <section class="sessoes">
-      <h2>SESSÕES</h2>
-      <form class="pesquisa">
-        <input type="date" name="data">
-        <input type="text" name="horario" placeholder="Horário">
-        <input type="text" name="sala" placeholder="Sala">
+  <!-- Conteúdo Principal -->
+  <main class="sessoes-container">
+    <section class="pesquisa-sessoes">
+      <h1>SESSÕES</h1>
+      <form class="form-sessoes">
+        <input type="date" class="input" name="data" placeholder="Data">
+        <input type="time" class="input" name="hora" placeholder="Horário">
+        <input type="text" class="input" name="sala" placeholder="Sala">
         <button class="btn-pesquisar">Pesquisar</button>
       </form>
+    </section>
 
-      <div class="sessoes-lista">
-        <!-- Estrutura das sessões -->
-        <div class="sessao-item">
+    <section class="resultados-sessoes">
+      <h2>Próximas Sessões:</h2>
+      <div class="sessao-card">
+        <img src="https://via.placeholder.com/100x150" alt="Poster do Filme" class="sessao-poster">
+        <div class="sessao-info">
           <h3>Título do Filme</h3>
-          <p>Horário: XX:XX</p>
-          <p>Sala: X</p>
+          <p>Data: 10/12/2024</p>
+          <p>Horário: 19:00</p>
+          <p>Sala: 1</p>
+          <button class="btn-comprar">Comprar</button>
+        </div>
+      </div>
+      <div class="sessao-card">
+        <img src="https://via.placeholder.com/100x150" alt="Poster do Filme" class="sessao-poster">
+        <div class="sessao-info">
+          <h3>Título do Filme</h3>
+          <p>Data: 10/12/2024</p>
+          <p>Horário: 21:00</p>
+          <p>Sala: 2</p>
           <button class="btn-comprar">Comprar</button>
         </div>
       </div>

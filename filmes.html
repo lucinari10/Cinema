@@ -7,15 +7,19 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="header">
-    <div class="logo">CINEXYZ</div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="sessoes.html">Sessões</a>
-      <a href="carrinho.html">Carrinho</a>
-      <button class="btn-cadastrar">Cadastrar</button>
-    </nav>
-  </header>
+    <header class="header">
+        <div class="logo">CINEXYZ</div>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="filmes.html">Filmes</a>
+          <a href="sessoes.html">Sessões</a>
+          <div id="admin-options" style="display: none;">
+            <a href="cadastro.html">Cadastrar</a>
+          </div>
+          <button onclick="location.href='login.html'" class="btn-login" id="login-btn">Login</button>
+        </nav>
+      </header>
+      
 
   <main>
     <section class="filmes">

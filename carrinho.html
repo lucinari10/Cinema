@@ -7,31 +7,57 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Cabeçalho -->
   <header class="header">
     <div class="logo">CINEXYZ</div>
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="filmes.html">Filmes</a>
       <a href="sessoes.html">Sessões</a>
-      <button class="btn-cadastrar">Cadastrar</button>
+      <div id="admin-options" style="display: none;">
+        <a href="cadastro.html">Cadastrar</a>
+      </div>
+      <button onclick="location.href='login.html'" class="btn-login" id="login-btn">Login</button>
     </nav>
   </header>
+  
 
-  <main>
-    <section class="carrinho">
-      <h2>CARRINHO</h2>
-      <div class="carrinho-itens">
-        <!-- Item do carrinho -->
-        <div class="carrinho-item">
-          <h3>Título do Filme</h3>
-          <p>Tipo: Meia/Inteira</p>
-          <p>Data: XX/XX</p>
-          <p>Horário: XX:XX</p>
-          <p>Sala: X</p>
-          <button class="btn-remover">Remover</button>
-        </div>
+  <!-- Conteúdo Principal -->
+  <main class="carrinho-container">
+    <h1>CARRINHO</h1>
+
+    <!-- Card do Item do Carrinho -->
+    <div class="carrinho-card">
+      <img src="https://via.placeholder.com/100x150" alt="Poster do Filme" class="carrinho-poster">
+      <div class="carrinho-info">
+        <h3>Título do Filme</h3>
+        <p>Tipo: VIP</p>
+        <p>Data: 10/12/2024</p>
+        <p>Horário: 19:00</p>
+        <p>Sala: 1</p>
+        <p>Quantidade: 2</p>
       </div>
-    </section>
+      <div class="carrinho-acoes">
+        <p>Total: R$40,00</p>
+        <button class="btn-comprar">Finalizar</button>
+      </div>
+    </div>
+
+    <div class="carrinho-card">
+      <img src="https://via.placeholder.com/100x150" alt="Poster do Filme" class="carrinho-poster">
+      <div class="carrinho-info">
+        <h3>Título do Filme</h3>
+        <p>Tipo: Meia</p>
+        <p>Data: 12/12/2024</p>
+        <p>Horário: 21:00</p>
+        <p>Sala: 2</p>
+        <p>Quantidade: 1</p>
+      </div>
+      <div class="carrinho-acoes">
+        <p>Total: R$20,00</p>
+        <button class="btn-comprar">Finalizar</button>
+      </div>
+    </div>
   </main>
 </body>
 </html>
