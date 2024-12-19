@@ -13,23 +13,25 @@
   .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 10px 20px;
-    background-color: #222;
   }
   
   .logo {
     font-size: 24px;
     font-weight: bold;
+    font-family: "Lexend Zetta";
   }
   
-  .nav a {
+
+.nav a {
     color: #fff;
     text-decoration: none;
     margin-right: 15px;
+    font-weight: bold;
+    text-align: center;
   }
   
-  .nav .btn-cadastrar {
+  .nav .btn-cadastrar .btn-login{
     padding: 8px 15px;
     background-color: #f4a259;
     border: none;
@@ -39,20 +41,24 @@
   }
   
   .banner {
-    text-align: center;
+    position: relative;
+    left: 12%;
+    width: 1400px;
+    height: 350px;
     background-color: #444;
     padding: 40px 20px;
     margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 25px;
   }
   
-  .banner h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-  }
-  
-  .banner p {
-    font-size: 24px;
-  }
+.tittle{
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
   
   .filmes {
     padding: 20px;
@@ -65,23 +71,27 @@
   }
   
   .filmes-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
   }
   
   .filme-card {
+    width: 550px;
+    height: 500px;
     background-color: #444;
-    padding: 15px;
     border-radius: 10px;
     text-align: center;
+    margin: 10px;
   }
   
   .filme-card .imagem {
     background-color: #666;
     height: 200px;
     border-radius: 10px;
-    margin-bottom: 10px;
+    position:static;
   }
   
   .filme-card h3 {
@@ -94,7 +104,7 @@
     margin-bottom: 15px;
   }
   
-  .btn-detalhes {
+  .btn-comprar {
     padding: 8px 15px;
     background-color: #f4a259;
     border: none;
@@ -114,11 +124,20 @@
   }
   
   .footer {
+    position: absolute;
     text-align: center;
-    padding: 10px 0;
-    background-color: #222;
+    bottom:0%;
+    width: 100%;
+    padding: 40px;
   }
   
+  .footer-tittle{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Lexend Zetta";
+    margin-bottom: 10px;
+  }
+
   .footer nav a {
     color: #fff;
     text-decoration: none;
